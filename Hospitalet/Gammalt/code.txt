@@ -1,0 +1,36 @@
+Skapa CA
+
+openssl req -x509 -newkey rsa:1024 -days 365 -keyout CA.key -out CA.cert
+
+Skapa keystore
+keytool -genkeypair -alias keystore -keypass keypass -keystore keystore -storepass storepass -validity 365
+
+Skapa csr
+keytool -certreq -keystore keystore -alias keystore -keypass keypass -storepass storepass -file csr.csr
+
+signera csr
+openssl x509 -req -days 365 -in user.csr -CA CA.cert -CAkey CA.key -CAcreateserial -CAserial serial -out userSigned.cert
+
+lägg in CA
+keytool -importcert -alias CA -keystore keystore -storepass storepass -trustcacerts -file CA.cert
+
+lägg in signerat cert
+keytool -importcert -alias keystore -keystore keystore -storepass storepass -trustcacerts -file userSigned.cert
+
+keytool -list -v -keystore keystore -storepass password
+
+keytool -list -keystore keystore -storepass password  
+
+
+skapa truststore
+keytool -import -alias certificatekey -file selfsignedcert.cer -keystore truststore.jks
+
+
+
+
+
+
+
+Ho5p1t@l_S3rv3r 
+Ho5p1t@l_S3rv3r
+
