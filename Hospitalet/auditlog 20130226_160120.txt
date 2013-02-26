@@ -1,0 +1,4 @@
+yyyyMMdd_HHmmss: 
+20130226_160120; ID:KIRK; Change:Captains log, stardate söldk3485ieuhfaoi4
+20130226_160120; ID:ELAK SNUBBE; Change:FUCK YOU
+20130226_160120; ID:HERP; Change:DERP
