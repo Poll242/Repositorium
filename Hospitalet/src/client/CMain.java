@@ -11,8 +11,7 @@ public class CMain {
 		int mode = 0;
 		while(mode != -1){
 			mode = pars.readInput();
-			
-			
+						
 		}
 	}
 }

@@ -20,6 +20,8 @@ public class CTransceiver{
 	private TrustManagerFactory tmf;
 	private SSLSocket ss;
 	private SSLContext sslContext;
+	private OutputStream os;
+	private InputStream is;
 	private char[] keystorePass, truststorePass;
 
 	public CTransceiver() {
@@ -30,6 +32,8 @@ public class CTransceiver{
 		try {
 			SSLSocketFactory ssf = sslContext.getSocketFactory();
 			ss = (SSLSocket) ssf.createSocket("localhost", 65004);
+			is = ss.getInputStream();
+			os = ss.getOutputStream();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -37,7 +41,7 @@ public class CTransceiver{
 
 	public void sendData(String cmd) {
 		try {
-			OutputStream os = ss.getOutputStream();
+			
 			os.write(cmd.getBytes());
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -86,6 +90,15 @@ public class CTransceiver{
 			e.printStackTrace();
 		}
 
+	}
+	
+	public String receiveData() throws IOException{
+		byte[] buffer = new byte[1024];
+		int bytesRead = is.read(buffer);
+		if (bytesRead == -1)
+			throw new IOException("Unexpected End-of-file Received");
+		String received = new String(buffer, 0, bytesRead);
+		return received;
 	}
 	
 	
