@@ -41,7 +41,6 @@ public class CTransceiver{
 
 	public void sendData(String cmd) {
 		try {
-			
 			os.write(cmd.getBytes());
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -174,4 +174,9 @@ public class Database implements Serializable {
 		log.addEntry(name, journalID, "User tried to add text \"" + text + "\" to journal without permission.");
 		return "Did not add text to journal. Permission denied!";
 	}
+	
+//	public static void main(String[] args) {
+//		Database db = new Database();
+//		System.out.println(db.addJournal(new Journal("Stefans journal", "Jonny Bombay", "Nurse Joy", "Dentistsry", "Stefan"), "Derp"));
+//	}
 }

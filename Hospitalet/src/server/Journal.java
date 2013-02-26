@@ -42,7 +42,7 @@ public class Journal implements Serializable {
 
 	public void changeText(String text) {
 		StringBuilder sb = new StringBuilder(this.text);
-		sb.append(" " + text);
+		sb.append("\n" + text);
 		text = sb.toString();
 
 	}

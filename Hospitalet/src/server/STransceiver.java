@@ -84,13 +84,18 @@ public class STransceiver {
 		try {
 			System.out.println("Server awaiting connection...");
 
+			
+			
 			newSS = (SSLSocket) ss.accept();
+			is = newSS.getInputStream();
 			ss.setUseClientMode(false);
 			ss.setNeedClientAuth(true);
-
-			is = newSS.getInputStream();
 			
 			os = newSS.getOutputStream();
+			SSLSession s = newSS.getSession();
+			X509Certificate cert = (X509Certificate)s.getPeerCertificateChain()[0];
+			String name = cert.getSubjectDN().getName();
+			System.out.println(name);
 			byte[] buffer = new byte[1024];
 			int bytesRead = is.read(buffer);
 			if (bytesRead == -1)
@@ -101,16 +106,13 @@ public class STransceiver {
 			 */
 			System.out.println("Read " + received.length() + " bytes...");
 			System.out.println(received);
-
+			
 		} catch (IOException e) {
-			System.out.println("Felaktigt CA-cert");
+			e.printStackTrace();
 		}
 	}
 
-	public void transmit() throws IOException {
-		SSLSession s = newSS.getSession();
-		X509Certificate cert = (X509Certificate)s.getPeerCertificateChain()[0];
-		String name = cert.getSubjectDN().getName();
+	public void transceive() throws IOException {
 		
 		byte[] buffer = new byte[1024];
 		int bytesRead = is.read(buffer);
@@ -120,12 +122,17 @@ public class STransceiver {
 		int cmd = Integer.parseInt(received);
 		switch(cmd){
 		case(1): 
-//			sendAllJournals(name);
+//			os.write(sendAlljournals(name,))
 		break;
 		case(2):
 			
 		}
 		
+	
+//	SSLSession s = newSS.getSession();
+//	X509Certificate cert = (X509Certificate)s.getPeerCertificateChain()[0];
+//	String name = cert.getSubjectDN().getName();
+//	System.out.println(name);
 	}
 	
 //	private void sendAllJournals(String subject){

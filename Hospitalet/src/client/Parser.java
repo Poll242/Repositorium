@@ -8,19 +8,21 @@ import java.util.Scanner;
 public class Parser {
 	private CTransceiver cTrans;
 	private Console console;
+	private Scanner scan;
 	String userName, passWord;
 
 	public Parser(CTransceiver cTrans) {
 		this.cTrans = cTrans;
 		console = System.console();
+		scan = new Scanner(System.in);
 	}
 
 	public int readInput() {
 		
-		System.out.println("Vad vill du g�ra? ");
+		System.out.println("Vad vill du göra? ");
 		System.out
 				.println("1) Visa Journal(er) \n 3) ändra journal(er) \n 4) Skapa ny journal \n 5) Ta bort ");
-		String input = console.readLine();
+		String input = scan.next();
 		if (input.equals( "1")) {
 			System.out.println(sendJournalRequest(input));
 		} else if(input.equals("2")){
@@ -49,9 +51,11 @@ public class Parser {
 
 	public void loginPrompt(String trustPass) {
 
-		String username = console.readLine("Username: ");
-		char[] password = console.readPassword("Password: ");
-		cTrans.setUp(password.toString(), trustPass, username);
+		System.out.println("Användarnamn: ");
+		String username = scan.next();
+		System.out.println("Lösenord: ");
+		String password = scan.next();
+		cTrans.setUp(password, trustPass, username);
 		
 		cTrans.connect();
 		username = "";
