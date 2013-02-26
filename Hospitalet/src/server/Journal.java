@@ -1,41 +1,40 @@
 package server;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 
 @SuppressWarnings("serial")
-public class Journal implements Serializable{
+public class Journal implements Serializable {
+	private String id;
 	private String doctor;
-	private ArrayList<String> nurses;
+	private String nurse;
+	private String division;
 	private String patient;
 	private String symptoms;
 	private String treatment;
 	private String comments;
 	
-	public Journal() {
-		
-	
+	public Journal(String id, String doctor, String nurse, String division, String patient) {
+		this.id = id;
+		this.doctor = doctor;
+		this.nurse = nurse;
+		this.division = division;
+		this.patient = patient;
 	}
 	
-	public void addDoctor(String doctor) {
-		this.doctor = doctor;
+	public String getID() {
+		return id;
 	}
 	
 	public String getDoctor() {
 		return doctor;
 	}
-
-	public void addNurse(String nurse) {
-		nurses.add(nurse);
+	
+	public String getNurse() {
+		return nurse;
 	}
 	
-	public String getNurses() {
-		StringBuilder sb = new StringBuilder();
-		for (String s : nurses) sb.append(s+" "); 
-		return sb.toString();
-	}
-	public void addPatient(String patient) {
-		this.patient = patient;
+	public String getDivision() {
+		return division;
 	}
 	
 	public String getPatient() {

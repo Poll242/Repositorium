@@ -18,6 +18,7 @@ public class Auditlog {
 		log = new File(name);
 		try {
 			log.createNewFile();
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -28,22 +29,20 @@ public class Auditlog {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			pw.println("yyyyMMdd_HHmmss;ID;Change ");
+			pw.println("yyyyMMdd_HHmmss;ID;JournalID;Changes ");
 			pw.flush();
+			log.setWritable(false);
 		
 			
 	}
 	
-	public void addEntry(String id, String newEntry) {
+	public void addEntry(String id, String journalID, String newEntry) {
+		log.setWritable(true);
+		
 		String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
-		pw.println(timeStamp+ ";" + id + ";" + newEntry);
+		pw.println(timeStamp+ ";" + id + ";" + journalID +";" + newEntry);
 		pw.flush();
+		log.setWritable(false);
 	}
 	
-	public static void main(String[] args) {
-		Auditlog au = new Auditlog();
-		au.addEntry("KIRK", "Captains log, stardate söldk3485ieuhfaoi4");
-		au.addEntry("ELAK SNUBBE", "FUCK YOU");
-		au.addEntry("HERP", "DERP");
-	}
 }
