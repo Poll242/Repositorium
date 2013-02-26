@@ -44,11 +44,11 @@ public class CTransceiver{
 		}
 	}
 
-	public void setUp(String keyPass, String trustPass) {
+	public void setUp(String keyPass, String trustPass, String usrName) {
 		keystorePass = keyPass.toCharArray();
 		truststorePass = trustPass.toCharArray();
 		
-		setUpKeystore();
+		setUpKeystore(usrName);
 		setUpTruststore();
 		setUpSSLContext();
 
@@ -75,10 +75,10 @@ public class CTransceiver{
 		}
 	}
 
-	private void setUpKeystore() {
+	private void setUpKeystore(String usrName) {
 		try {
 			ksKeys = KeyStore.getInstance("JKS");
-			ksKeys.load(new FileInputStream("nytt/fakedoc_keystore"),
+			ksKeys.load(new FileInputStream("nytt/" +usrName),
 					keystorePass);
 			kmf = KeyManagerFactory.getInstance("SunX509");
 			kmf.init(ksKeys, keystorePass);
@@ -87,4 +87,6 @@ public class CTransceiver{
 		}
 
 	}
+	
+	
 }
