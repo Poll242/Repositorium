@@ -40,7 +40,7 @@ public class Auditlog {
 		log.setWritable(true);
 		
 		String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
-		pw.println(timeStamp+ ";" + id + ";" + journalID +";" + newEntry);
+		pw.println(timeStamp+ ";" + id + ";" + journalID +";" + newEntry + "\n");
 		pw.flush();
 		log.setWritable(false);
 	}
