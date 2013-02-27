@@ -51,13 +51,15 @@ public class Database implements Serializable {
 	}
 
 	public String deleteJournal(String journalID, String name) {
+		Journal temp = null;
 		if (name.equals("StyrelsenMADDERFAKKER")) {
 			for (Journal j : db) {
 				if (journalID.equals(j.getID())) {
-					db.remove(j);
+					temp = j;
 
 				}
 			}
+			db.remove(temp);
 			log.addEntry(name, journalID, "Journal deleted.");
 			return "Journal with ID " + journalID + " removed.";
 		}
@@ -224,5 +226,9 @@ public class Database implements Serializable {
 		System.out
 				.println(db.deleteJournal("Stefans", "StyrelsenMADDERFAKKER"));
 		System.out.println("----");
+		System.out.println(db.getAssociatedJournals("Jonny Bombay", "Ris"));
+		System.out.println("----");
+		System.out.println(db.addJournal("Hej", "Svensson", "Nurse Joy", "Mat", "Jörgen"));
+		
 	}
 }

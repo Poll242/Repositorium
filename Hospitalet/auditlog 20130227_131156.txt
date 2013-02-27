@@ -1,1 +1,0 @@
-yyyyMMdd_HHmmss;ID;JournalID;Changes 

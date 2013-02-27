@@ -1,4 +1,0 @@
-yyyyMMdd_HHmmss;ID;JournalID;Changes 
-20130226_162725;DR._Jones;E12387;Added patient Göran Bengtsson; Added nurse Lisa Birgerdottir
-20130226_162725;Nurse Lisa;E12387;Added symptoms snuva
-20130226_162725;SS;E12387;Deleted journal
