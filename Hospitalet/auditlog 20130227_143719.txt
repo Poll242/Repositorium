@@ -1,0 +1,11 @@
+yyyyMMdd_HHmmss;ID;JournalID;Changes 
+20130227_143719;Jonny Bombay;Stefans;Added new journal; Doctor = Jonny Bombay; Nurse = Nurse Joy; Patient = Red Shirt; Division = Ris
+
+20130227_143720;Jonny Bombay;List of journals;User retrieved associated journals
+
+20130227_143720;Jonny Bombay;Stefans;User read journal.
+
+20130227_143720;Jonny Bombay;Stefans;User added text: Snuva som fan. 
+
+20130227_143720;Jonny Bombay;Stefans;User read journal.
+

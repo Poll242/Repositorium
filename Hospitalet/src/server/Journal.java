@@ -18,6 +18,7 @@ public class Journal implements Serializable {
 		this.nurse = nurse;
 		this.division = division;
 		this.patient = patient;
+		this.text = "";
 	}
 
 	public String getID() {
@@ -41,9 +42,10 @@ public class Journal implements Serializable {
 	}
 
 	public void changeText(String text) {
-		StringBuilder sb = new StringBuilder(this.text);
+		StringBuilder sb = new StringBuilder();
+		sb.append(this.text);
 		sb.append("\n" + text);
-		text = sb.toString();
+		this.text = sb.toString();
 
 	}
 
