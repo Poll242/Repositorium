@@ -7,7 +7,7 @@ public class CMain {
 		CTransceiver cTrans = new CTransceiver();
 		
 		Parser pars = new Parser(cTrans);
-		pars.loginPrompt("Ho5p1t@l_S3rv3r");
+		pars.loginPrompt("password");
 
 		int mode = 0;
 		while(mode != -1){

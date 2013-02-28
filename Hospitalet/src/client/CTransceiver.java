@@ -76,7 +76,7 @@ public class CTransceiver{
 	private void setUpTruststore() {
 		try {
 			ksTrust = KeyStore.getInstance("JKS");
-			ksTrust.load(new FileInputStream("nytt/clienttruststore"),
+			ksTrust.load(new FileInputStream("nytt/client/client_truststore.jks"),
 					truststorePass);
 			tmf = TrustManagerFactory.getInstance("SunX509");
 			tmf.init(ksTrust);
@@ -88,7 +88,7 @@ public class CTransceiver{
 	private void setUpKeystore(String usrName) {
 		try {
 			ksKeys = KeyStore.getInstance("JKS");
-			ksKeys.load(new FileInputStream("nytt/" +usrName),
+			ksKeys.load(new FileInputStream("nytt/users/" +usrName),
 					keystorePass);
 			kmf = KeyManagerFactory.getInstance("SunX509");
 			kmf.init(ksKeys, keystorePass);

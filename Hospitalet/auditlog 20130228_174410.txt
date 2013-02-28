@@ -1,0 +1,5 @@
+yyyyMMdd_HHmmss;ID;JournalID;Changes 
+20130228_174429;Joy;1;User tried to add jounral without permission.
+
+20130228_174437;Joy;List of journals;User retrieved associated journals
+
