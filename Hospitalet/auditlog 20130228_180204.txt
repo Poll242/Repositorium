@@ -1,0 +1,11 @@
+yyyyMMdd_HHmmss;ID;JournalID;Changes 
+20130228_180219;StyrelsenMADDAFAKKER;List of journals;User retrieved associated journals
+
+20130228_180224;StyrelsenMADDAFAKKER;0002;User read journal.
+
+20130228_180230;StyrelsenMADDAFAKKER;5!0002;Journal deleted.
+
+20130228_180240;StyrelsenMADDAFAKKER;List of journals;User retrieved associated journals
+
+20130228_180249;StyrelsenMADDAFAKKER;0002;User read journal.
+

@@ -1,0 +1,5 @@
+yyyyMMdd_HHmmss;ID;JournalID;Changes 
+20130228_175820;Gregory House;List of journals;User retrieved associated journals
+
+20130228_175841;Gregory House;0001;User read journal.
+

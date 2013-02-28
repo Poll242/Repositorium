@@ -1,0 +1,3 @@
+yyyyMMdd_HHmmss;ID;JournalID;Changes 
+20130228_180724;StyrelsenMADDAFAKKER;List of journals;User retrieved associated journals
+

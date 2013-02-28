@@ -5,20 +5,12 @@ import javax.security.cert.X509Certificate;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.PrintWriter;
-import java.net.InetSocketAddress;
-import java.net.ServerSocket;
-import java.nio.ByteBuffer;
-import java.nio.channels.SocketChannel;
 import java.security.*;
-import java.security.cert.CertificateException;
-import java.util.ArrayList;
-import java.util.Scanner;
 
 public class STransceiver {
 	private KeyStore ksKeys, ksTrust;
@@ -145,7 +137,8 @@ public class STransceiver {
 
 			break;
 		case ('5'):
-			pw.println(imdb.deleteJournal(received, doctor));
+			temp = received.split("!");
+			pw.println(imdb.deleteJournal(temp[1], doctor));
 			pw.flush();
 			break;
 		}

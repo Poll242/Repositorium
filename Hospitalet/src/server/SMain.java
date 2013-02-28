@@ -1,6 +1,8 @@
 package server;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 
 
 public class SMain {
@@ -17,5 +19,7 @@ public class SMain {
 		while(true){
 			sTrans.transceive();
 		}
-	}
+		
+		
+ 	}
 }

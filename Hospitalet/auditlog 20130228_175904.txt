@@ -1,0 +1,7 @@
+yyyyMMdd_HHmmss;ID;JournalID;Changes 
+20130228_175915;StyrelsenMADDAFAKKER;List of journals;User tried to retieve list of journals. Access denied!
+
+20130228_175933;StyrelsenMADDAFAKKER;0002;User tried to access journal without permission.
+
+20130228_175939;StyrelsenMADDAFAKKER;5!0001;User tried to delete journal without permission
+

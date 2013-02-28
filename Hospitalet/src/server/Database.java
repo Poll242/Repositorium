@@ -33,6 +33,9 @@ public class Database implements Serializable {
 		patients.add("Private Wilhelm");
 		patients.add("Johan Gran du Nilsson");
 		patients.add("Black Knight");
+		
+		db.add(new Journal("0001", "Gregory House", "Joy", "Diagnostic Medicine", "Black Knight"));
+		db.add(new Journal("0002", "Alban Nwapa", "Carla Espinosa", "Dentistry", "Red Shirt"));
 	}
 
 	public String addJournal(String id, String doctor, String nurse,
@@ -51,15 +54,18 @@ public class Database implements Serializable {
 	}
 
 	public String deleteJournal(String journalID, String name) {
-		Journal temp = null;
-		if (name.equals("StyrelsenMADDERFAKKER")) {
+		int temp = -1;
+		System.out.println(journalID);
+		if (name.equals("StyrelsenMADDAFAKKER")) {
 			for (Journal j : db) {
+				System.out.println(j.getID());
 				if (journalID.equals(j.getID())) {
-					temp = j;
-
+					temp = db.indexOf(j);
+					
 				}
 			}
 			db.remove(temp);
+			System.out.println(db.contains(temp));
 			log.addEntry(name, journalID, "Journal deleted.");
 			return "Journal with ID " + journalID + " removed.";
 		}
@@ -107,7 +113,7 @@ public class Database implements Serializable {
 						+ "#Division: " + temp.getDivision() + "#Patient: "
 						+ temp.getPatient() + "#Text: " + temp.getText();
 			}
-		} else if (name.equals("StyrelsenMADDERFAKKER")) {
+		} else if (name.equals("StyrelsenMADDAFAKKER")) {
 			log.addEntry(name, temp.getID(), "User read journal.");
 			return "Journal ID: " + temp.getID() + "#Doctor: "
 					+ temp.getDoctor() + "#Nurse: " + temp.getNurse()
@@ -169,7 +175,7 @@ public class Database implements Serializable {
 			return sb.toString();
 		}
 
-		else if (name.equals("StyrelsenMADDERFAKKER")) {
+		else if (name.equals("StyrelsenMADDAFAKKER")) {
 			for (Journal j : db) {
 				list.add(j);
 			}
