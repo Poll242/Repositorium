@@ -44,7 +44,11 @@ public class Journal implements Serializable {
 	public void changeText(String text) {
 		StringBuilder sb = new StringBuilder();
 		sb.append(this.text);
+<<<<<<< HEAD
 		sb.append("\n" + text);
+=======
+		sb.append("#" + text);
+>>>>>>> det nya fixade
 		this.text = sb.toString();
 
 	}
@@ -53,4 +57,8 @@ public class Journal implements Serializable {
 		return text;
 	}
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> det nya fixade

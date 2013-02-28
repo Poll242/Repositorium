@@ -3,11 +3,16 @@ package client;
 import javax.net.ssl.*;
 import javax.security.cert.X509Certificate;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.channels.SocketChannel;
@@ -41,7 +46,12 @@ public class CTransceiver{
 
 	public void sendData(String cmd) {
 		try {
+<<<<<<< HEAD
 			os.write(cmd.getBytes());
+=======
+			PrintWriter bw = new PrintWriter(ss.getOutputStream(), true);
+			bw.println(cmd);
+>>>>>>> det nya fixade
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -92,11 +102,18 @@ public class CTransceiver{
 	}
 	
 	public String receiveData() throws IOException{
+<<<<<<< HEAD
 		byte[] buffer = new byte[1024];
 		int bytesRead = is.read(buffer);
 		if (bytesRead == -1)
 			throw new IOException("Unexpected End-of-file Received");
 		String received = new String(buffer, 0, bytesRead);
+=======
+
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(ss.getInputStream()));
+		String received = br.readLine();
+>>>>>>> det nya fixade
 		return received;
 	}
 	
