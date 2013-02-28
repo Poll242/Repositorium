@@ -26,32 +26,6 @@ public class Parser {
 		
 		System.out.println("Vad vill du göra? ");
 		System.out
-<<<<<<< HEAD
-				.println("1) Visa Journal(er) \n 3) ändra journal(er) \n 4) Skapa ny journal \n 5) Ta bort ");
-		String input = scan.next();
-		if (input.equals( "1")) {
-			System.out.println(sendJournalRequest(input));
-		} else if(input.equals("2")){
-			System.out.println("Mata in ID på den journalen du vill visa: ");
-			System.out.println(sendJournalRequest(console.readLine()));
-		} else if (input.equals("3")) {
-			System.out.println("Mata in ID på den journalen du vill ändra: ");
-			sendJournalRequest(console.readLine());
-			System.out.println("Skriv in det du vill lägga till: ");
-			String addText = console.readLine();
-			sendJournalRequest(addText);
-		}else if(input.equals("4")){
-			System.out.println("Mata in ID på den journalen du vill skapa: ");
-			sendJournalRequest(console.readLine());
-			System.out.println("Mata in namnet på patienten: ");
-			sendJournalRequest(console.readLine());
-			System.out.println("Mata in åkomma hos patienten: ");
-			sendJournalRequest(console.readLine());
-		}else if(input.equals("5")){
-			System.out.println("Mata in ID på den journalen du vill ta bort: ");
-			sendJournalRequest(console.readLine());
-			System.out.println("Journal borttagen");
-=======
 				.println("1) Visa alla journaler \n 2) Visa en journal \n 3) ändra journal(er) \n 4) Skapa ny journal \n 5) Ta bort ");
 		String input = scan.nextLine();
 		
@@ -79,7 +53,6 @@ public class Parser {
 		}else if(input.equals("5")){
 			System.out.println("Mata in ID på den journalen du vill ta bort: ");
 			System.out.println(sendJournalRequest(input + "!" + scan.nextLine()).replace("#", "\n"));
->>>>>>> det nya fixade
 		}
 		return Integer.parseInt(input);
 	}
@@ -87,15 +60,9 @@ public class Parser {
 	public void loginPrompt(String trustPass) {
 
 		System.out.println("Användarnamn: ");
-<<<<<<< HEAD
-		String username = scan.next();
-		System.out.println("Lösenord: ");
-		String password = scan.next();
-=======
 		String username = scan.nextLine();
 		System.out.println("Lösenord: ");
 		String password = scan.nextLine();
->>>>>>> det nya fixade
 		cTrans.setUp(password, trustPass, username);
 		
 		cTrans.connect();

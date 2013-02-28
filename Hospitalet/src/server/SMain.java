@@ -12,7 +12,7 @@ public class SMain {
 	public static void main(String[] args) throws IOException {
 		Database base = new Database();
 		STransceiver sTrans = new STransceiver(base);
-		sTrans.setUp("Ke1ys_to#Re9", "Ho5p1t@l_S3rv3r");
+		sTrans.setUp("password", "password");
 			sTrans.accept();
 		while(true){
 			sTrans.transceive();

@@ -8,13 +8,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-<<<<<<< HEAD
-import java.io.OutputStream;
-=======
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.PrintWriter;
->>>>>>> det nya fixade
 import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.nio.ByteBuffer;
@@ -22,10 +18,7 @@ import java.nio.channels.SocketChannel;
 import java.security.*;
 import java.security.cert.CertificateException;
 import java.util.ArrayList;
-<<<<<<< HEAD
-=======
 import java.util.Scanner;
->>>>>>> det nya fixade
 
 public class STransceiver {
 	private KeyStore ksKeys, ksTrust;
@@ -38,15 +31,9 @@ public class STransceiver {
 	private OutputStream os;
 	private char[] keystorePass, truststorePass;
 	private Database imdb;
-<<<<<<< HEAD
-=======
 	private String doctor, division;
 	private BufferedReader br;
 
-	public STransceiver(Database imdb) {
-		this.imdb = imdb;
-	}
->>>>>>> det nya fixade
 
 	public STransceiver(Database imdb){
 		this.imdb = imdb;
@@ -76,7 +63,7 @@ public class STransceiver {
 	private void setUpTruststore() {
 		try {
 			ksTrust = KeyStore.getInstance("JKS");
-			ksTrust.load(new FileInputStream("nytt/server_truststore"),
+			ksTrust.load(new FileInputStream("nytt/server/server_truststore.jks"),
 					truststorePass);
 			tmf = TrustManagerFactory.getInstance("SunX509");
 			tmf.init(ksTrust);
@@ -88,7 +75,7 @@ public class STransceiver {
 	private void setUpKeystore() {
 		try {
 			ksKeys = KeyStore.getInstance("JKS");
-			ksKeys.load(new FileInputStream("nytt/server_keystore"),
+			ksKeys.load(new FileInputStream("nytt/server/server_keystore"),
 					keystorePass);
 
 			kmf = KeyManagerFactory.getInstance("SunX509");
@@ -104,31 +91,6 @@ public class STransceiver {
 		try {
 			System.out.println("Server awaiting connection...");
 
-<<<<<<< HEAD
-			
-			
-			newSS = (SSLSocket) ss.accept();
-			is = newSS.getInputStream();
-			ss.setUseClientMode(false);
-			ss.setNeedClientAuth(true);
-			
-			os = newSS.getOutputStream();
-			SSLSession s = newSS.getSession();
-			X509Certificate cert = (X509Certificate)s.getPeerCertificateChain()[0];
-			String name = cert.getSubjectDN().getName();
-			System.out.println(name);
-			byte[] buffer = new byte[1024];
-			int bytesRead = is.read(buffer);
-			if (bytesRead == -1)
-				throw new IOException("Unexpected End-of-file Received");
-			String received = new String(buffer, 0, bytesRead);
-			/*
-			 * Write results to screen.
-			 */
-			System.out.println("Read " + received.length() + " bytes...");
-			System.out.println(received);
-			
-=======
 			ss.setUseClientMode(false);
 			ss.setNeedClientAuth(true);
 
@@ -145,35 +107,12 @@ public class STransceiver {
 			 * Write results to screen.
 			 */
 
->>>>>>> det nya fixade
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
 	public void transceive() throws IOException {
-<<<<<<< HEAD
-		
-		byte[] buffer = new byte[1024];
-		int bytesRead = is.read(buffer);
-		if (bytesRead == -1)
-			throw new IOException("Unexpected End-of-file Received");
-		String received = new String(buffer, 0, bytesRead);
-		int cmd = Integer.parseInt(received);
-		switch(cmd){
-		case(1): 
-//			os.write(sendAlljournals(name,))
-		break;
-		case(2):
-			
-		}
-		
-	
-//	SSLSession s = newSS.getSession();
-//	X509Certificate cert = (X509Certificate)s.getPeerCertificateChain()[0];
-//	String name = cert.getSubjectDN().getName();
-//	System.out.println(name);
-=======
 		String received;
 
 		br = new BufferedReader(new InputStreamReader(newSS.getInputStream()));
@@ -218,7 +157,6 @@ public class STransceiver {
 		doctor = temp[0].split("=")[1];
 		division = temp[1].split("=")[1];
 
->>>>>>> det nya fixade
 	}
 	
 //	private void sendAllJournals(String subject){

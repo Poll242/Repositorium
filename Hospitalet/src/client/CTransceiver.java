@@ -46,12 +46,9 @@ public class CTransceiver{
 
 	public void sendData(String cmd) {
 		try {
-<<<<<<< HEAD
-			os.write(cmd.getBytes());
-=======
+
 			PrintWriter bw = new PrintWriter(ss.getOutputStream(), true);
 			bw.println(cmd);
->>>>>>> det nya fixade
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -102,18 +99,10 @@ public class CTransceiver{
 	}
 	
 	public String receiveData() throws IOException{
-<<<<<<< HEAD
-		byte[] buffer = new byte[1024];
-		int bytesRead = is.read(buffer);
-		if (bytesRead == -1)
-			throw new IOException("Unexpected End-of-file Received");
-		String received = new String(buffer, 0, bytesRead);
-=======
 
-		
 		BufferedReader br = new BufferedReader(new InputStreamReader(ss.getInputStream()));
 		String received = br.readLine();
->>>>>>> det nya fixade
+
 		return received;
 	}
 	

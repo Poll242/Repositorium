@@ -22,15 +22,9 @@ public class Database implements Serializable {
 		doctors.add("Alban Nwapa");
 		doctors.add("Jonny Bombay");
 		doctors.add("Gregory House");
-<<<<<<< HEAD
-		doctors.add("René Jones");
-
-		nurses.add("Nurse Joy");
-=======
 		doctors.add("RenÃ© Jones");
 
 		nurses.add("Joy");
->>>>>>> det nya fixade
 		nurses.add("Carla Espinosa");
 		nurses.add("Hot Lips Houlihan");
 		nurses.add("Christine Chapel");
@@ -77,30 +71,18 @@ public class Database implements Serializable {
 	public String getJournal(String journalID, String name, String division) {
 		Journal temp = null;
 		for (Journal j : db) {
-<<<<<<< HEAD
-			if (journalID.equals(j.getID()))
-				temp = j;
-=======
 			if (journalID.equals(j.getID())) {
 				temp = j;
 			}
->>>>>>> det nya fixade
 		}
 		if (patients.contains(name)) {
 
 			if (name.equals(temp.getPatient())) {
 				log.addEntry(name, temp.getID(), "User read journal.");
-<<<<<<< HEAD
-				return "Journal ID: " + temp.getID() + "\nDoctor: "
-						+ temp.getDoctor() + "\nNurse: " + temp.getNurse()
-						+ "\nDivision: " + temp.getDivision() + "\nPatient: "
-						+ temp.getPatient() + "\nText: " + temp.getText();
-=======
 				return "Journal ID: " + temp.getID() + "#Doctor: "
 						+ temp.getDoctor() + "#Nurse: " + temp.getNurse()
 						+ "#Division: " + temp.getDivision() + "#Patient: "
 						+ temp.getPatient() + "#Text: " + temp.getText();
->>>>>>> det nya fixade
 			}
 
 		}
@@ -109,17 +91,10 @@ public class Database implements Serializable {
 			if (name.equals(temp.getNurse())
 					|| division.equals(temp.getDivision())) {
 				log.addEntry(name, temp.getID(), "User read journal.");
-<<<<<<< HEAD
-				return "Journal ID: " + temp.getID() + "\nDoctor: "
-						+ temp.getDoctor() + "\nNurse: " + temp.getNurse()
-						+ "\nDivision: " + temp.getDivision() + "\nPatient: "
-						+ temp.getPatient() + "\nText: " + temp.getText();
-=======
 				return "Journal ID: " + temp.getID() + "#Doctor: "
 						+ temp.getDoctor() + "#Nurse: " + temp.getNurse()
 						+ "#Division: " + temp.getDivision() + "#Patient: "
 						+ temp.getPatient() + "#Text: " + temp.getText();
->>>>>>> det nya fixade
 			}
 		}
 
@@ -127,19 +102,6 @@ public class Database implements Serializable {
 			if (name.equals(temp.getDoctor())
 					|| division.equals(temp.getDivision())) {
 				log.addEntry(name, temp.getID(), "User read journal.");
-<<<<<<< HEAD
-				return "Journal ID: " + temp.getID() + "\nDoctor: "
-						+ temp.getDoctor() + "\nNurse: " + temp.getNurse()
-						+ "\nDivision: " + temp.getDivision() + "\nPatient: "
-						+ temp.getPatient() + "\nText: " + temp.getText();
-			}
-		} else if (name.equals("StyrelsenMADDERFAKKER")) {
-			log.addEntry(name, temp.getID(), "User read journal.");
-			return "Journal ID: " + temp.getID() + "\nDoctor: "
-					+ temp.getDoctor() + "\nNurse: " + temp.getNurse()
-					+ "\nDivision: " + temp.getDivision() + "\nPatient: "
-					+ temp.getPatient() + "\nText: " + temp.getText();
-=======
 				return "Journal ID: " + temp.getID() + "#Doctor: "
 						+ temp.getDoctor() + "#Nurse: " + temp.getNurse()
 						+ "#Division: " + temp.getDivision() + "#Patient: "
@@ -151,7 +113,6 @@ public class Database implements Serializable {
 					+ temp.getDoctor() + "#Nurse: " + temp.getNurse()
 					+ "#Division: " + temp.getDivision() + "#Patient: "
 					+ temp.getPatient() + "#Text: " + temp.getText();
->>>>>>> det nya fixade
 		}
 		log.addEntry(name, journalID,
 				"User tried to access journal without permission.");
@@ -169,15 +130,9 @@ public class Database implements Serializable {
 			}
 			log.addEntry(name, "List of journals",
 					"User retrieved associated journals");
-<<<<<<< HEAD
-			StringBuilder sb = new StringBuilder("Journal ID; Patient \n");
-			for (Journal j : list) {
-				sb.append(j.getID() + "; " + j.getPatient() + "\n");
-=======
 			StringBuilder sb = new StringBuilder("Journal ID; Patient #");
 			for (Journal j : list) {
 				sb.append(j.getID() + "; " + j.getPatient() + "#");
->>>>>>> det nya fixade
 			}
 			return sb.toString();
 		}
@@ -191,15 +146,9 @@ public class Database implements Serializable {
 			}
 			log.addEntry(name, "List of journals",
 					"User retrieved associated journals");
-<<<<<<< HEAD
-			StringBuilder sb = new StringBuilder("Journal ID; Patient \n");
-			for (Journal j : list) {
-				sb.append(j.getID() + "; " + j.getPatient() + "\n");
-=======
 			StringBuilder sb = new StringBuilder("Journal ID; Patient #");
 			for (Journal j : list) {
 				sb.append(j.getID() + "; " + j.getPatient() + "#");
->>>>>>> det nya fixade
 			}
 			return sb.toString();
 		}
@@ -213,15 +162,9 @@ public class Database implements Serializable {
 			}
 			log.addEntry(name, "List of journals",
 					"User retrieved associated journals");
-<<<<<<< HEAD
-			StringBuilder sb = new StringBuilder("Journal ID; Patient \n");
-			for (Journal j : list) {
-				sb.append(j.getID() + "; " + j.getPatient() + "\n");
-=======
 			StringBuilder sb = new StringBuilder("Journal ID; Patient #");
 			for (Journal j : list) {
 				sb.append(j.getID() + "; " + j.getPatient() + "#");
->>>>>>> det nya fixade
 			}
 			return sb.toString();
 		}
@@ -232,15 +175,9 @@ public class Database implements Serializable {
 			}
 			log.addEntry(name, "List of journals",
 					"User retrieved associated journals");
-<<<<<<< HEAD
-			StringBuilder sb = new StringBuilder("Journal ID; Patient \n");
-			for (Journal j : list) {
-				sb.append(j.getID() + "; " + j.getPatient() + "\n");
-=======
 			StringBuilder sb = new StringBuilder("Journal ID; Patient #");
 			for (Journal j : list) {
 				sb.append(j.getID() + "; " + j.getPatient() + "#");
->>>>>>> det nya fixade
 			}
 			return sb.toString();
 		}
@@ -272,31 +209,4 @@ public class Database implements Serializable {
 				+ "\" to journal without permission.");
 		return "Did not add text to journal. Permission denied!";
 	}
-<<<<<<< HEAD
-
-	public static void main(String[] args) {
-		Database db = new Database();
-		System.out.println(db.addJournal("Stefans", "Jonny Bombay",
-				"Nurse Joy", "Ris", "Red Shirt"));
-		System.out.println("----");
-		System.out.println(db.getAssociatedJournals("Jonny Bombay", "Ris"));
-		System.out.println("----");
-		System.out.println(db.getJournal("Stefans", "Jonny Bombay", "Ris"));
-		System.out.println("----");
-		System.out.println(db.appendToText("Jonny Bombay", "Stefans",
-				"Snuva som fan. "));
-		System.out.println("----");
-		System.out.println(db.getJournal("Stefans", "Jonny Bombay", "Ris"));
-		System.out.println("----");
-		System.out
-				.println(db.deleteJournal("Stefans", "StyrelsenMADDERFAKKER"));
-		System.out.println("----");
-		System.out.println(db.getAssociatedJournals("Jonny Bombay", "Ris"));
-		System.out.println("----");
-		System.out.println(db.addJournal("Hej", "Svensson", "Nurse Joy", "Mat", "Jörgen"));
-		
-	}
 }
-=======
-}
->>>>>>> det nya fixade

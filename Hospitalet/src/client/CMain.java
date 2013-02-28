@@ -8,18 +8,12 @@ public class CMain {
 		
 		Parser pars = new Parser(cTrans);
 		pars.loginPrompt("Ho5p1t@l_S3rv3r");
-<<<<<<< HEAD
-		cTrans.sendData("JOHAN FTW!");
+
 		int mode = 0;
 		while(mode != -1){
 			mode = pars.readInput();
 						
-=======
-		int mode = 0;
-		while(mode != -1){
-			mode = pars.readInput();
-					
->>>>>>> det nya fixade
+
 		}
 	}
 }
