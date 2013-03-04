@@ -87,6 +87,12 @@ public class STransceiver {
 			ss.setNeedClientAuth(true);
 
 			newSS = (SSLSocket) ss.accept();
+			try {
+				Thread.sleep(500);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			is = newSS.getInputStream();
 			os = newSS.getOutputStream();
 
