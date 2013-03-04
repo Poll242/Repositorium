@@ -64,7 +64,12 @@ public class Parser {
 		System.out.println("Lösenord: ");
 		String password = scan.nextLine();
 		cTrans.setUp(password, trustPass, username);
-		
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		cTrans.connect();
 		username = "";
 		password = null;
